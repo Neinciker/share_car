@@ -5,6 +5,5 @@ import com.car.pojo.Passenger;
 
 public class get_result {
 
-    public static boolean carpoolstatus1(Car car, Passenger passenger){
 
-    }
+}
