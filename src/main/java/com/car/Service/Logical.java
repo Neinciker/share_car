@@ -45,7 +45,20 @@ public class Logical {
         String locationA_e = car.getCar_request().get(0).getPassengerLocation().getEndPlace();
         String locationB_s = car_request.getPassengerLocation().getStartPlace();
         String locationB_e = car_request.getPassengerLocation().getEndPlace();
-        String distance_all = caculate_distence.distance()
+        double distance_As_Bs = Integer.valueOf(caculate_distence.distance(locationA_s,locationB_s));
+
+        //一种情况
+        double distance_Bs_Ae = Integer.valueOf(caculate_distence.distance(locationB_s,locationA_e));
+        double distance_Ae_Be = Integer.valueOf(caculate_distence.distance(locationA_e,locationB_e));
+        double distance_all1 = distance_As_Bs+distance_Bs_Ae+distance_Ae_Be;
+
+        //第二种情况
+        double distance_Bs_Be = Integer.valueOf(caculate_distence.distance(locationB_s,locationB_e));
+        double distance_Be_Ae = Integer.valueOf(caculate_distence.distance(locationB_e,locationA_e));
+        double distance_all2 = distance_As_Bs+distance_Bs_Be+distance_Be_Ae;
+
+
+
 
 
     }
