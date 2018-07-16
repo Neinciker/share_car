@@ -5,7 +5,15 @@ public class PassengerLocation {
     private String endPlace;
     private String nowPlace;
     private String passengerId;
+    private boolean timeStatus;
 
+    public boolean isTimeStatus() {
+        return timeStatus;
+    }
+
+    public void setTimeStatus(boolean timeStatus) {
+        this.timeStatus = timeStatus;
+    }
     public String getPassengerId() {
         return passengerId;
     }

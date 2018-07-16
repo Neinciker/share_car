@@ -32,8 +32,23 @@ public class Logical {
     }
     public static Status_res one_time(Car car, Car_request car_request, Passenger passenger){
         Status_res status_res = new Status_res();
-        status_res.setStatus(true);
-        status_res.setDiscount(1);
+        Car car1 = new Car();
+        car1 = car;
+        if (car.isCar_status()){
+            if (passenger.getPassengerLocation().isTimeStatus()){
+                car1.setCar_status(true);
+
+            }
+            else {
+                car1.setCar_status(false);
+            }
+            status_res.setCar(car1);
+            status_res.setStatus(true);
+            status_res.setDiscount(1);
+        }
+        else {
+            status_res.setStatus(false);
+        }
         return status_res;
 //        String distance = caculate_distence.distance(car_request.getPassengerLocation().getStartPlace(),car_request.getPassengerLocation().getEndPlace());
 
@@ -46,6 +61,7 @@ public class Logical {
         String locationB_s = car_request.getPassengerLocation().getStartPlace();
         String locationB_e = car_request.getPassengerLocation().getEndPlace();
         double distance_As_Bs = Integer.valueOf(caculate_distence.distance(locationA_s,locationB_s));
+        double distance_As_Ae = Integer.valueOf(caculate_distence.distance(locationA_s,locationA_e));
 
         //一种情况
         double distance_Bs_Ae = Integer.valueOf(caculate_distence.distance(locationB_s,locationA_e));
@@ -56,6 +72,16 @@ public class Logical {
         double distance_Bs_Be = Integer.valueOf(caculate_distence.distance(locationB_s,locationB_e));
         double distance_Be_Ae = Integer.valueOf(caculate_distence.distance(locationB_e,locationA_e));
         double distance_all2 = distance_As_Bs+distance_Bs_Be+distance_Be_Ae;
+
+        if (car.isCar_status()){
+            if(distance_all1<=(distance_As_Ae+distance_Bs_Be)){
+
+            }
+
+            if (distance_all2<=(distance_As_Ae+distance_Bs_Be)){
+
+            }
+        }
 
 
 

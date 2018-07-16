@@ -9,6 +9,15 @@ public class Car extends PassengerLocation {
     private List<Car_request> car_request;
     private String car_username;
     private String password;
+    private boolean car_status;
+
+    public boolean isCar_status() {
+        return car_status;
+    }
+
+    public void setCar_status(boolean car_status) {
+        this.car_status = car_status;
+    }
 
     public int getId() {
         return id;
